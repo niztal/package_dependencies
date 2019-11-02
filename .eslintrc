@@ -1,0 +1,31 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "extends": ["eslint:recommended"],
+    "rules":{
+        "indent":[2, 4],
+       "comma-dangle": 0,
+       "object-curly-spacing": 0,
+       "max-len": [2, 120, 2, { "ignoreComments": true, "ignoreUrls": true }],
+       "no-use-before-define": 2, //Fails on styles used before they are defined.
+       "arrow-body-style": 0,
+       "no-param-reassign": [2, { "props": false }],
+       "no-undef": 2,
+       "no-redeclare": 2,
+       "no-shadow": 2,
+       "no-console": 0, //console.log in server may be used for logging
+       "init-declarations": 0,
+       "no-catch-shadow": 0,
+       "no-delete-var": 2,
+       "no-implicit-globals": 0,
+       "no-label-var": 0,
+       "no-self-assign": 2,
+       "no-shadow-restricted-names": 2,
+       "no-undef-init": 0,
+       "no-undefined": 0,
+       "no-unused-vars": [2, { "vars": "local", "args": "after-used" }]
+    }
+  }
