@@ -1,0 +1,29 @@
+{
+  "name": "package_dependencies",
+  "version": "1.0.0",
+  "description": "This module represents an express.js server which gets as an input npm module name and returns its list of dependencies",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niztal/package_dependencies.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "dependecies",
+    "module",
+    "package"
+  ],
+  "author": "Nitzan Tal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niztal/package_dependencies/issues"
+  },
+  "homepage": "https://github.com/niztal/package_dependencies#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
