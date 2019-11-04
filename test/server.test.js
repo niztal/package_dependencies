@@ -25,9 +25,17 @@ describe("dependencies server should", () => {
         });
         chai.request(server)
             .get('/dependencies')
-            .query({pkg: somePackage})
+            .query({package: somePackage})
             .end((err, res) => {
                 res.should.have.status(404);
+                done();
+            });
+    });
+    it("respond Bad Request when not getting package", (done) => {
+        chai.request(server)
+            .get('/dependencies')
+            .end((err, res) => {
+                res.should.have.status(400);
                 done();
             });
     });
