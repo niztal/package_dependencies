@@ -50,3 +50,4 @@ You should see this:
 - Configurable file to enable config TTL, package's dependencies 3rd party (e.g. Yarn) etc.
 - Authorization middleware to enable service only for authorized user
 - Login service
+- Configure GitHub repo to work with PRs and not push directly to master
