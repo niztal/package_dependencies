@@ -67,6 +67,30 @@ describe("dependencies server should", () => {
                 done();
             });
     });
+    it("respond dependencies for specific version", (done) => {
+        const version = "someVersion";
+        const expectedResponse = {
+            dependencies: {
+                "dep_a": "1.5.10",
+                "dep_b": "^2.0.2"
+            },
+            devDependencies: {
+                "deb_c": "^4.17.1",
+            }
+        };
+        moxios.stubRequest(`${npmURL}/${somePackage}/${version}`, {
+            status: 200,
+            response: expectedResponse
+        });
+        chai.request(server)
+            .get('/dependencies')
+            .query({package: somePackage, version})
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.should.be.eql(expectedResponse);
+                done();
+            });
+    });
     it("cache dependencies for latest version", (done) => {
         const getSpy = sinon.spy(axios, "get");
         const expectedResponse = {
